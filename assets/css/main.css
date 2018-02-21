@@ -1,5 +1,93 @@
-.login {
+body {
   background: #f5f5f5;
+  position: relative;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+.login {
+  position: absolute;
+  background-color: white;
+  padding: 35px;
   border: 1px solid #fdfdfd;
   border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
+  top: 50%;
+  max-height: 360px;
+  left: 50%;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.login input {
+  padding: 0.75em 0.5em;
+  color: #9E9E9E;
+  border: 1px solid rgba(205, 205, 205, 0.55);
+  position: relative;
+  z-index: 1;
+}
+
+.login input:focus,
+.login input:active {
+  z-index: 10;
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.login input[type='submit'] {
+  margin-top: 20px;
+  max-width: 250px;
+  align-self: center;
+}
+
+.login h3 + input {
+  border-radius: 3px 3px 0px 0px;
+}
+.last--mod{
+  border-radius: 0px 0px 3px 3px;
+}
+
+.login input {
+  margin: -1px;
+}
+
+.login h3 {
+  text-align: center;
+  font-size: 2em;
+  margin: 45px 0px;
+  margin-top: 0px;
+}
+
+.login span {
+  display: block;
+  margin: 20px 0px 0px 0px;
+}
+
+.btn {
+  font-weight: bold;
+  cursor: pointer;
+  color: white !important;
+  text-transform: uppercase;
+}
+
+.login .btn {
+  transition: all 0.25s linear;
+  line-height: 1;
+}
+
+.login .btn:hover {
+  line-height: 1;
+  transform: scale(1.25);
 }

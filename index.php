@@ -2,16 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
   <!-- here localtion view controller helper -->
   <script type="application/javascript" src="/assets/scripts/location.js"></script> 
   <title>Proyecto 2 - Programacion 2 - UNET</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 <?php
- require_once('./config.php');
+//  require_once('./config.php');
  require('./Controllers/View.php');
+ require('./Controllers/Db.php');
+ 
+ $db = new Db([
+   'dbName' => 'demo',
+   'host' => '0.0.0.0',
+   'port' => 3306,
+   'user' => 'root',
+   'password' => false
+  ]);
+
+  $db->connect();
+
  $url = $_GET['url'] ?? '/';
 
  echo $url;
@@ -27,6 +39,10 @@
     break;
   case 'login.php': 
     $url = './Views/Login.html.php';
+    View::render($url, $vars = []);
+    break;
+  case 'signup.php':
+    $url = './Views/Signup.html.php';
     View::render($url, $vars = []);
     break;
    default: 

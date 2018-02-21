@@ -38,3 +38,7 @@
         Require all granted
     </Directory>
     ```
+# Info 
+  Apache/2.4.29 (Unix) OpenSSL/1.0.2n PHP/7.2.1 mod_perl/2.0.8-dev Perl/v5.16.3
+  Versión del cliente de base de datos: libmysql - mysqlnd 5.0.12-dev
+  Versión de PHP: 7.2.1

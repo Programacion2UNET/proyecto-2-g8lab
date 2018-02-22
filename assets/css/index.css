@@ -153,6 +153,7 @@ footer {
   font-weight: bolder;
   transition: background-color 0.25s ease;
   border: 1px solid transparent;
+  position: absolute;
 }
 
 .btn-back:hover {
@@ -163,10 +164,11 @@ footer {
 
 .anim-in {
   animation-fill-mode: forwards;
-  animation-duration: 0.25s;
+  animation-duration: 0.45s;
+  animation-delay: 0.10s;
   animation-name: anim-in-out;
   animation-timing-function: cubic-bezier(1, 0, 0, 1);
-  position: relative;
+  position: absolute;
 }
 
 @keyframes anim-in-out {

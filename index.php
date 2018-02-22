@@ -6,8 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
   <!-- here localtion view controller helper -->
   <script type="application/javascript" src="/assets/scripts/location.js"></script> 
-  <title>Proyecto 2 - Programacion 2 - UNET</title>
+  <title>Proyecto 2 - Programacion 2 - UNET (TournametsTournamets)</title>
   <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/index.css" />
+  <link href="https://fonts.googleapis.com/css?family=Mukta+Malar|Roboto" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
 </head>
 <?php
  session_start();
@@ -84,10 +87,9 @@
     $session->logout();
     header('location:index.php');
     break;
-  default: 
-    $url = './Views/404.html.php';
-    $vars = ['name' => 'Not Found', 'code' => 404];
-    View::render($url, $vars);
+  default:
+    $vars = ['message' => 'Not Found', 'code' => 404];
+    View::render('./Views/ERRORO.html.php', $vars);
     break;
  };
 ?>

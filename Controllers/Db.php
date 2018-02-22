@@ -56,6 +56,14 @@
       return $r;
     }
     
+    public function getTournaments ($id) {
+      return ['1' => 1, '2' => '2'];
+    }
+
+    public function addInTournament ($id) {
+
+    }
+
     public function authenticate ($username, $password) {
       if (!$this->conn) return false;
       $password = hash('SHA256', $password);

@@ -1,0 +1,127 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  color: #252629;
+}
+
+h2 {
+  color: whitesmoke;
+}
+
+body {
+  font-family: 'Mukta Malar', sans-serif;
+  font-size: 16px;
+  line-height: 1.2em;
+  letter-spacing: 0.05px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: #434343;
+}
+
+.nav {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  line-height: 64px;
+  padding: 0 16px;
+  transition: 0.3s background-color;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background-color: rgba(0,0,0,0.2);
+}
+
+.hoverless:hover {
+  background-color: initial !important;
+}
+.nav ul {
+  display: flex;
+}
+
+.nav ul li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: 0.3s background-color;
+}
+
+.nav ul li:hover {
+  background-color: rgba(27,31,39,0.4);
+}
+.nav ul li a {
+  padding: 0.25em 0.75em;
+  text-decoration: none;
+}
+
+.nav ul li a {
+  color: #fff;
+}
+
+.nav ul li .btn:hover {
+  text-decoration: underline !important;
+}
+
+
+.main-header-container { 
+  position: relative;
+  width: 100%;
+  height: 380px;
+}
+
+.index {
+  margin-top: 30px;
+  padding: 0px 30px;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+.index article h3 {
+  margin: 15px 0px;
+  align-self: left;
+}
+
+.index article p {
+  margin: 5px 0px;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.index article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 920px;
+  flex-direction: column;
+}
+
+.main-header {
+  background-image: url("https://gestorligas.com/imagenes/gestor-ligas-slide-2.jpg");
+  background-attachment: fixed;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 35px;
+  background-color: #232630;
+}

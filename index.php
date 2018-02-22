@@ -48,7 +48,9 @@
     if ($session->isAuth()) {
       header('location:dashboard.php');
     }
-    View::render('./Views/Login.html.php', []);
+    View::render('./Views/Login.html.php', [
+      'message' => false
+    ]);
     break;
   case 'GET signup.php':
     View::render('./Views/Signup.html.php', []);
@@ -70,7 +72,9 @@
       break;
     }
     else {
-      header('location:index.php');
+      View::render('./Views/Login.html.php', [
+        'message' => 'invalid credentials'
+      ]);
     }
     break;
    }

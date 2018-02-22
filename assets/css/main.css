@@ -99,3 +99,11 @@ body {
   line-height: 1;
   transform: scale(1.25);
 }
+
+.invalid {
+  color: red;
+  text-align: center;
+  line-height: 2.2;
+  font-weight: bolder;
+  text-transform: uppercase;
+}

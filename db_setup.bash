@@ -1,0 +1,1 @@
+CREATE TABLE `proyecto-progra`.`users` ( `team_name` VARCHAR(255) NOT NULL , `id` BIGINT NOT NULL AUTO_INCREMENT , `in_charge` VARCHAR(255) NULL , `user_name` VARCHAR(255) NOT NULL , `short_name` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `create_at` TIMESTAMP NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;

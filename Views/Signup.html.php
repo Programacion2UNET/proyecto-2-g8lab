@@ -1,5 +1,5 @@
-<a href="/">Back</a>
-<form method="POST" action='/signup.php' class='login'>
+<a class='btn-back anim-in' href="/">Back</a>
+<form method="POST" action='/signup.php' class='login login-single'>
   <h3>Team signup form</h3>
   <div class='input-group'>
     <input name='teamName' maxlength="255" type="text" value='' placeholder='team name' title='your team name' required/>

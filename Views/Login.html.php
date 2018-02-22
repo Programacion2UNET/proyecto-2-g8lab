@@ -1,8 +1,7 @@
-<a href="/">Back</a>
+<a class='btn-back <?=$message ? "" : "anim-in"?>' href="/">Back</a>
 <form method="POST" action='/login.php' class='login'>
   <h3>Login</h3>
-  <div class='invalid'><?=$message ? "$message" : "  "?></div>
-  <br />
+  <div class='invalid shaking-of'><?=$message ? "$message" : "  "?></div>
   <input required name='userName' maxlength="255" type="text" placeholder='name' title='your user name'/>
   <input required name='password' maxlength="255" type="password" placeholder='password' title='your secret'/>
   <span>

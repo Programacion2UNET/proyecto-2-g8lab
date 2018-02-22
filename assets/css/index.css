@@ -6,6 +6,7 @@
 
 h2 {
   color: whitesmoke;
+  margin-right: 25px;
 }
 
 body {
@@ -106,7 +107,7 @@ p {
 }
 
 .main-header {
-  background-image: url("https://gestorligas.com/imagenes/gestor-ligas-slide-2.jpg");
+  background-image: url("http://localhost/assets/images/gestor-ligas.jpg");
   background-attachment: fixed;
   position: absolute;
   background-position: center;
@@ -124,4 +125,69 @@ footer {
   left: 0;
   height: 35px;
   background-color: #232630;
+}
+
+.icon-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-text a {
+  color: white;
+  margin-right: 25px;
+}
+
+
+.btn-back {
+  border-radius: 3px;
+  background: #252629;
+  padding: 0.5em 1em;
+  color: white;
+  margin: 10px 30px;
+  display: block;
+  max-width: 50px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+.anim-in {
+  animation-fill-mode: forwards;
+  animation-duration: 0.25s;
+  animation-name: anim-in-out;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  position: relative;
+}
+
+@keyframes anim-in-out {
+  from {
+    left: -20%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+.shaking-of {
+  animation-fill-mode: forwards;
+  animation-duration: 0.25s;
+  animation-name: anim-shaking-of;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  position: relative;
+}
+
+@keyframes anim-shaking-of {
+  0% {
+    transform: rotate(4deg);
+    top: -10px;
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    top: 0px;
+  }
 }

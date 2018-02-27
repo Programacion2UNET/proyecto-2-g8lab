@@ -2,9 +2,10 @@
   class Session {
     public function __construct () {}
 
-    public function start ($username, $id) {
+    public function start ($username, $id, $idAdmin = false) {
       $_SESSION['username'] = $username;
       $_SESSION['id'] = $id;
+      $_SESSION['idAdmin'] =  $idAdmin;
       $this->setFakeToken();
     }
 
@@ -46,9 +47,14 @@
       }
       $_SESSION['username'] = false;
       $_SESSION['id'] = false;
+      $_SESSION['idAdmin'] =  false;
       setcookie('isAuth', null);
       session_destroy();
       return true;
+    }
+
+    public function isAdmin () {
+      return $_SESSION['idAdmin'];
     }
 
     public function isAuth () {

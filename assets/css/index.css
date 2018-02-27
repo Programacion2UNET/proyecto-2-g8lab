@@ -1,6 +1,6 @@
 * {
-  padding: 0px;
-  margin: 0px;
+  /* padding: 0px; */
+  /* margin: 0px; */
   color: #252629;
 }
 
@@ -107,7 +107,7 @@ p {
 }
 
 .main-header {
-  background-image: url("http://localhost/assets/images/gestor-ligas.jpg");
+  background-image: url("http://localhost/proyecto-2-g8lab/assets/images/gestor-ligas.jpg");
   background-attachment: fixed;
   position: absolute;
   background-position: center;
@@ -183,7 +183,7 @@ footer {
 
 .shaking-of {
   animation-fill-mode: forwards;
-  animation-duration: 0.25s;
+  animation-duration: 0.35s;
   animation-name: anim-shaking-of;
   animation-timing-function: cubic-bezier(1, 0, 0, 1);
   position: relative;

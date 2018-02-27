@@ -2,8 +2,8 @@
   <nav class='nav'>
     <div class='icon-text'>
       <h2>Tournamet-Maketor</h2>
-      <?= $auth ? "<a href='/RegisterTournamets.php'>Tournaments Register</a>": '' ?>
-      <?= $auth ? "<a href='/MyTournaments.php'>My Tournaments</a>": '' ?>
+      <?= $auth ? "<a href='RegisterTournamets.php'>Tournaments Register</a>": '' ?>
+      <?= $auth ? "<a href='MyTournaments.php'>My Tournaments</a>": '' ?>
     </div>
     <ul>
       <li>
@@ -12,9 +12,9 @@
       <li>
         <a href="#">Info</a>
       </li>
-      <?= !$auth ? '<li><a href="/login.php">Login</a></li>' : "<li><a href='/logout.php'>logout</a></li>" ?>
+      <?= !$auth ? '<li><a href="login.php">Login</a></li>' : "<li><a href='logout.php'>logout</a></li>" ?>
       <?= !$auth ? '<li class="hoverless"><a class="btn" href="/signup.php">Signup</a></li>' : '' ?>
-      <?= $auth ? "<li><a href='/dashboard.php'>Profile</a></li>": '' ?>
+      <?= $auth ? "<li><a href='dashboard.php'>Profile</a></li>": '' ?>
     </ul>
   </nav>
   <header class='main-header-container'>

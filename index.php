@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
   <!-- here localtion view controller helper -->
-  <script type="application/javascript" src="/assets/scripts/location.js"></script> 
+  <script type="application/javascript" src="assets/scripts/location.js"></script> 
   <title>Proyecto 2 - Programacion 2 - UNET (TournametsTournamets)</title>
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
   <!-- <link href="https://fonts.googleapis.com/css?family=Mukta+Malar|Roboto" rel="stylesheet" /> -->
   <link rel="stylesheet" href="assets/css/normalize.css" />
 </head>
@@ -48,9 +48,11 @@
     if ($session->isAuth()) {
       header('location:dashboard.php');
     }
-    View::render('./Views/Login.html.php', [
-      'message' => false
-    ]);
+    else {
+      View::render('./Views/Login.html.php', [
+        'message' => false
+      ]);
+    }
     break;
   case 'GET signup.php':
     View::render('./Views/Signup.html.php', []);
@@ -58,6 +60,7 @@
   case 'POST signup.php':
     $POST = $_POST;
     $db->saveUser($POST);
+    header('location:login.php');
     break;
   case 'POST login.php': {
     if ($session->isAuth()) {
@@ -67,7 +70,7 @@
     $password = $_POST['password'];
     $r = $db->authenticate($userName, $password);
     if ($r) {
-      $session->start($r['user_name'], $r['id']); 
+      $session->start($r['user_name'], $r['id'], $r['admin']); 
       header('location:dashboard.php');
       break;
     }
@@ -81,11 +84,26 @@
   case 'GET dashboard.php': 
     if ($session->isAuth()) {
       View::render('./Views/dashboard.html.php', [
-        'username' => $session->getUsername()
+        'username' => $session->getUsername(),
+        'isAdmin' => $session->isAdmin()
       ]);
     } else {
       header('location:login.php');
     }
+    break;
+  case 'GET admin.php': 
+    if ($session->isAuth() && $session->isAdmin()) {
+      $users = $db->getUsers();
+      $tournaments = $db->getTournaments();
+      View::render('./Views/admin.html.php', [
+        'users' => $users,
+        'tournaments' => $tournaments
+      ]);
+    }
+    else {
+      header('location:login.php');
+    }
+
     break;
   case 'GET logout.php': 
     $session->logout();

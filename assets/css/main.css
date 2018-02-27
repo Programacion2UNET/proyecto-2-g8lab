@@ -3,6 +3,7 @@ body {
   position: relative;
   min-height: 100vh;
   font-size: 16px;
+  text-align: center;
 }
 
 .login {
@@ -130,4 +131,177 @@ body {
 
 .login.login-single input {
   margin: 6px;
+}
+
+
+tr, td, th {
+  vertical-align: middle;
+  text-align: left;
+}
+
+.true-admin {
+  text-transform: uppercase;
+  color: green;
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  display: block !important;
+}
+
+.false-admin {
+  text-transform: uppercase;
+  color: rgb(102, 1, 1);
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  display: block !important;
+}
+
+td {
+  text-transform: lowercase;
+}
+
+table td span {
+  word-wrap: break-word !important;
+  max-width: 200px !important;
+  display: inline-block !important;
+  margin: 0px 20px;
+  margin-left: 0px;
+}
+
+td, th {
+  width: 120px;
+  margin: 0;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+th {
+  /* border-bottom: 2px solid #ddd; */
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+table tr, table td, table tr {
+  font-size: 12px !important;
+  color: #666 !important;
+}
+
+.more-btn {
+  margin-bottom: 40px;
+}
+
+table th span {
+  font-size: 15px !important;
+  font-weight: bolder;
+  line-height: 1.35em;
+  display: block;
+  padding: 0.75em;
+}
+
+tr {
+  padding: 15px;
+}
+
+.td-btn {
+  width: 230px;
+  text-align: right;
+}
+
+.td-btn .btn {
+  margin: 5px 10px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+
+.btn-success {
+  background: green;
+}
+
+table {
+  background: rgba(255, 255, 255, 0.27);
+  border-radius: 3px;
+  padding: 10px !important;
+  width: 100% !important;
+  max-width: 80% !important;
+  margin: 0 auto;
+  margin-bottom: 20px !important;
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+  box-sizing: border-box !important;
+}
+
+.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th
+{
+  border-top: 0px solid #ddd !important;
+}
+
+th {
+  text-align: left !important;
+  font-size: 1.5em !important;
+  line-height: 1.2em;
+  border-bottom: 2px solid #ddd !important;
+  font-weight: bold !important;
+  padding-right: 15px;
+}
+
+table {
+  border-collapse: collapse !important;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th
+{
+  padding: 8px !important;
+  line-height: 1.42857143 !important;
+  vertical-align: top !important;
+  border-top: 1px solid #ddd !important;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th
+{
+  vertical-align: middle !important;
+  padding: 7px 18px !important;
+}
+
+thead {
+  display: table-header-group !important;
+  vertical-align: middle !important;
+  border-color: inherit !important;
+}
+
+.table>thead>tr>th {
+  border-bottom: 2px solid #ddd !important;
 }

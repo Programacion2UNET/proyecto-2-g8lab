@@ -37,6 +37,7 @@
       $email = $userData['email'];
       $password = $userData['password'];
       $inCharge = $userData['inCharge'];
+      $admin = false; // not set yet
       $password = hash('SHA256', $password);
 
       $sql = 'INSERT INTO users(team_name, in_charge, user_name, short_name, email, password) 
@@ -56,8 +57,32 @@
       return $r;
     }
     
-    public function getTournaments ($id) {
-      return ['1' => 1, '2' => '2'];
+    public function getUsers () {
+      $sql = 'SELECT * FROM users';
+      $query = $this->conn->prepare($sql);
+      $query->execute();
+      $result = $query->fetchAll();
+      $users = [];
+      foreach( $result as $row ) {
+        array_push($users, $row);
+      }
+
+      // var_dump($users);
+      
+      return $users;
+    }
+
+    public function getTournaments () {
+      $sql = 'SELECT * FROM place';
+      $query = $this->conn->prepare($sql);
+      $query->execute();
+      $result = $query->fetchAll();
+      $places = [];
+      foreach( $result as $row ) {
+        array_push($places, $row);
+      }
+  
+      return $places;
     }
 
     public function addInTournament ($id) {

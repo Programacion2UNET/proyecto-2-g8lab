@@ -72,6 +72,35 @@
       return $users;
     }
 
+    public function getRegisters () {
+      $sql = 'SELECT * FROM Registated';
+      $query = $this->conn->prepare($sql);
+      $query->execute();
+      $result = $query->fetchAll();
+      $registers = [];
+
+      foreach( $result as $row ) {
+        array_push($registers, $row);
+      }
+
+      return $registers;
+    }
+
+    public function getTournamentsByUserId ($userId) {
+      $sql = 'SELECT P.name \'tournament_name\', U.user_name "user_name" FROM Registated R JOIN place P JOIN users U ON (R.tournament_id=P.id AND R.user_id=U.id AND U.id=:userId)';
+      $query = $this->conn->prepare($sql);
+      $query->execute([
+        'userId' => $userId
+      ]);
+      $result = $query->fetchAll();
+      $places = [];
+      foreach( $result as $row ) {
+        array_push($places, $row);
+      }
+  
+      return $places;
+    }
+
     public function getTournaments () {
       $sql = 'SELECT * FROM place';
       $query = $this->conn->prepare($sql);

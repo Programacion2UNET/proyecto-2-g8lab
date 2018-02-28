@@ -13,7 +13,7 @@
         <a href="#">Info</a>
       </li>
       <?= !$auth ? '<li><a href="login.php">Login</a></li>' : "<li><a href='logout.php'>logout</a></li>" ?>
-      <?= !$auth ? '<li class="hoverless"><a class="btn" href="/signup.php">Signup</a></li>' : '' ?>
+      <?= !$auth ? '<li class="hoverless"><a class="btn" href="signup.php">Signup</a></li>' : '' ?>
       <?= $auth ? "<li><a href='dashboard.php'>Profile</a></li>": '' ?>
     </ul>
   </nav>

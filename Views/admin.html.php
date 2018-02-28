@@ -1,4 +1,5 @@
 <body>
+  <a class='btn-back anim-in' href="index.php">Back</a>
   <h1>Admin Panel</h1>
   <br />
   <br />
@@ -30,7 +31,7 @@
               echo"<td><span>$user[email]</span></td>";
               echo"<td><span>$user[password]</span></td>";
               echo"<td><span>$user[create_at]</span></td>";
-              echo "<td>".($user['admin']?"<span class='false-admin'>FALSE</span>":"<span class='true-admin'>TRUE</span>")."</td>";
+              echo "<td>".(!$user['admin']?"<span class='false-admin'>FALSE</span>":"<span class='true-admin'>TRUE</span>")."</td>";
               echo"
                 <td class='td-btn'>
                   <span class='btn btn-warning'>Update</span>
@@ -41,12 +42,11 @@
         ?>
     </tbody>
   </table>
-      <h4 class='more-btn btn btn-success'>
-        Add more
-      </h4>
+  <h4 class='more-btn btn btn-success'>
+    Add more
+  </h4>
   <br />
   <br />
-
     <table>
     <h3>Tournamets</h3>
     <thead>
@@ -64,15 +64,18 @@
     </thead>
     <tbody>
       <tr>
-        <!-- <td><?=$tournaments['id']?></td>
-        <td><?=$tournaments['name']?></td>
-        <td><?=$tournaments['start']?></td>
-        <td><?=$tournaments['end']?></td>
-        <td><?=$tournaments['create_at']?></td>
-        <td><?=$tournaments['description']?></td>
-        <td><?=$tournaments['place']?></td>
-        <td><?=$tournaments['category']?></td> -->
-        <td>SAMPLE</td>
+        <?php 
+          foreach ($tournaments as $tournament) {
+            echo "<td><span>$tournament[id]</span></td>";
+            echo "<td><span>$tournament[name]</span></td>";
+            echo "<td><span>$tournament[start]</span></td>";
+            echo "<td><span>$tournament[end]</span></td>";
+            echo "<td><span>$tournament[created_at]</span></td>";
+            echo "<td><span>$tournament[description]</span></td>";
+            echo "<td><span>$tournament[place]</span></td>";
+            echo "<td><span>$tournament[category]</span></td>";
+          }
+        ?>
         <td class='td-btn'>
           <span class='btn btn-warning'>Update</span>
           <span class='btn btn-danger'>Delete</span>
@@ -80,28 +83,32 @@
       </tr>
     </tbody>
   </table>
+  <h4 class='more-btn btn btn-success'>
+    Add more
+  </h4>
   <br />
   <br />
-
   <table>
     <h3>Registers</h3>
     <thead>
       <tr>
         <th>id</th>
         <th>User id</th>
-        <th>tournament id</th>
         <th>created at</th>
-        <th>Created At</th>
+        <th>tournament id</th>
         <th>&nbsp;</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>SAMPLE</td>
-        <td>SAMPLE</td>
-        <td>SAMPLE</td>
-        <td>SAMPLE</td>
-        <td>SAMPLE</td>
+        <?php 
+          foreach ($registers as $register) {
+            echo "<td><span>$register[id]</span></td>";
+            echo "<td><span>$register[user_id]</span></td>";
+            echo "<td><span>$register[created_at]</span></td>";
+            echo "<td><span>$register[tournament_id]</span></td>";
+          }
+        ?>
         <td class='td-btn'>
           <span class='btn btn-warning'>Update</span>
           <span class='btn btn-danger'>Delete</span>
@@ -109,7 +116,9 @@
       </tr>
     </tbody>
   </table>
+  <h4 class='more-btn btn btn-success'>
+      Add more
+  </h4>
   <br />
   <br />
-
 </body>

@@ -133,6 +133,13 @@ body {
   margin: 6px;
 }
 
+.dashboard h2 {
+  color: black;
+}
+
+li {
+  list-style-type: none !important;
+}
 
 tr, td, th {
   vertical-align: middle;

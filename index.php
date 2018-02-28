@@ -83,9 +83,11 @@
    }
   case 'GET dashboard.php': 
     if ($session->isAuth()) {
+      $tournamentsById = $db->getTournamentsByUserId($session->getId());
       View::render('./Views/dashboard.html.php', [
         'username' => $session->getUsername(),
-        'isAdmin' => $session->isAdmin()
+        'isAdmin' => $session->isAdmin(),
+        'tournamentsById' => $tournamentsById
       ]);
     } else {
       header('location:login.php');
@@ -95,9 +97,11 @@
     if ($session->isAuth() && $session->isAdmin()) {
       $users = $db->getUsers();
       $tournaments = $db->getTournaments();
+      $registers = $db->getRegisters();
       View::render('./Views/admin.html.php', [
         'users' => $users,
-        'tournaments' => $tournaments
+        'tournaments' => $tournaments,
+        'registers' => $registers
       ]);
     }
     else {

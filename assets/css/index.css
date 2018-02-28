@@ -9,6 +9,15 @@ h2 {
   margin-right: 25px;
 }
 
+.disabled {
+  border: 1px solid #999999 !important;
+  background-color: #cccccc !important;
+  color: #666666 !important;
+  cursor: default !important;
+  opacity: 0.5;
+  /* filter: opacity() */
+}
+
 body {
   font-family: 'Mukta Malar', sans-serif;
   font-size: 16px;

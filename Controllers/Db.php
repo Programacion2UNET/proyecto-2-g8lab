@@ -114,7 +114,10 @@
     }
 
     public function getTournamentsByUserId ($userId) {
-      $sql = 'SELECT P.name \'tournament_name\', U.user_name "user_name" FROM Registated R JOIN place P JOIN users U ON (R.tournament_id=P.id AND R.user_id=U.id AND U.id=:userId)';
+      $sql = 'SELECT 
+        P.name \'tournament_name\',
+        U.user_name "user_name"
+        FROM Registated R JOIN place P JOIN users U ON (R.tournament_id=P.id AND R.user_id=U.id AND U.id=:userId)';
       $query = $this->conn->prepare($sql);
       $query->execute([
         'userId' => $userId

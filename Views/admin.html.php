@@ -59,6 +59,7 @@
         <th>Decription</th>
         <th>place</th>
         <th>Category</th>
+        <th>Users in tournament</th>
         <th>&nbsp;</th>
       </tr>
     </thead>
@@ -74,6 +75,7 @@
             echo "<td><span>$tournament[description]</span></td>";
             echo "<td><span>$tournament[place]</span></td>";
             echo "<td><span>$tournament[category]</span></td>";
+            echo "<td><span>??</span></td>";
             echo "<td class='td-btn'>
                     <span class='btn btn-warning'>Update</span>
                     <span class='btn btn-danger'>Delete</span>

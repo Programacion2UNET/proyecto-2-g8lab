@@ -153,6 +153,17 @@
     }
     break;
   }
+  case 'GET registerIn.php': {
+    if ($session->isAuth()) { 
+      $id = $_GET['id'];
+      $db->registerByUserInT($session->getId(), $id);
+      header('location:login.php');
+    }
+    else {
+      header('location:userTRegister.php');
+    }
+  }
+    break;
   case 'GET userTRegister.php': {
     if ($session->isAuth()) {
       $allT = $db->getTournaments();

@@ -144,10 +144,24 @@
       ]);
       if ($R) {
         View::render('./Views/ERRORO.html.php', ['message' => 'SAVED', 'code' => 200]);
+      } else {
+        View::render('./Views/ERRORO.html.php', ['message' => 'not save', 'code' => 500]);
       }
     }
     else {
       header('location:login.php');
+    }
+    break;
+  }
+  case 'GET userTRegister.php': {
+    if ($session->isAuth()) {
+      $allT = $db->getTournaments();
+      View::render('./Views/userTRegister.html.php', [
+        'allT' => $allT
+      ]);
+    }
+    else {
+      header('location:index.php');
     }
     break;
   }

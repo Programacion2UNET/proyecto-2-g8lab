@@ -9,7 +9,7 @@
   <title>Proyecto 2 - Programacion 2 - UNET (TournametsTournamets)</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/index.css" />
-  <!-- <link href="https://fonts.googleapis.com/css?family=Mukta+Malar|Roboto" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css?family=Mukta+Malar|Roboto" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/normalize.css" />
 </head>
 <?php

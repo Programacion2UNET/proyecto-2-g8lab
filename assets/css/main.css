@@ -12,6 +12,11 @@ h4 a {
   font-weight: bolder;
 }
 
+.mod-opogly {
+  opacity: 0.25 !important;
+  cursor: none !important;
+}
+
 .login {
   position: absolute;
   background-color: white;

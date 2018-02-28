@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
   <!-- here localtion view controller helper -->
-  <script type="application/javascript" src="assets/scripts/location.js"></script> 
+  <script type="application/javascript" src="assets/scripts/index.js"></script> 
   <title>Proyecto 2 - Programacion 2 - UNET (TournametsTournamets)</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/index.css" />
@@ -167,6 +167,10 @@
   case 'GET userTRegister.php': {
     if ($session->isAuth()) {
       $allT = $db->getTournaments();
+      foreach ($allT as &$t) {
+        $r = $db->getIfIn($t['id'], $session->getId());
+        $t['isIn'] = $r;
+      }
       View::render('./Views/userTRegister.html.php', [
         'allT' => $allT
       ]);

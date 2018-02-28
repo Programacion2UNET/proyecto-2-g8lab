@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-02-2018 a las 05:02:44
+-- Tiempo de generación: 28-02-2018 a las 23:06:51
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.1
 
@@ -44,7 +44,11 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`id`, `name`, `category`, `start`, `end`, `created_at`, `description`, `place`) VALUES
-(1, 'kljksaldkal', 'kjsdhfkj', 'kjsahdk', 'kjdhskja', '2018-02-26 17:08:12', 'asdasmndbamsd', 'sadasdas');
+(2, 'este ', '2', '0001-01-01', '0023-11-10', '2018-02-28 13:42:27', 'es ', 'unet'),
+(3, 'este ', '2', '0001-01-01', '0023-11-10', '2018-02-28 13:43:16', 'es ', 'unet'),
+(4, 'otro torneitox', '3', '2018-02-21', '2018-02-18', '2018-02-28 13:54:05', 'sadasd', 'asdsad'),
+(5, 'copa si va', '1', '2018-02-23', '2018-06-08', '2018-02-28 18:34:45', 'si va ps', 'acapue'),
+(6, 'asd', '1', '2017-07-13', '2018-02-10', '2018-02-28 18:40:48', 'asd', 'asd');
 
 -- --------------------------------------------------------
 
@@ -64,7 +68,10 @@ CREATE TABLE `Registated` (
 --
 
 INSERT INTO `Registated` (`id`, `user_id`, `created_at`, `tournament_id`) VALUES
-(1, 4, '2018-02-26 17:09:48', 1);
+(1, 4, '2018-02-26 17:09:48', 1),
+(2, 4, '2018-02-28 18:21:32', 4),
+(3, 4, '2018-02-28 18:21:40', 2),
+(4, 9, '2018-02-28 18:23:06', 4);
 
 -- --------------------------------------------------------
 
@@ -124,13 +131,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `place`
 --
 ALTER TABLE `place`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `Registated`
 --
 ALTER TABLE `Registated`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

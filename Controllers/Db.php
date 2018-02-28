@@ -103,15 +103,13 @@
     }
 
     public function getIfIn ($tournamentID, $userID) {
-      $sql = 'SELECT * FROM Registated WHERE user_id=:userId and tournament_id=:tournamentID';
+      $sql = 'SELECT * FROM Registated WHERE user_id=:userID AND tournament_id=:tournamentID';
       $query = $this->conn->prepare($sql);
       $R = $query->execute([
         'tournamentID' => $tournamentID,
         'userID' => $userID
       ]);
-
       $user = $query->fetch(PDO::FETCH_ASSOC);
-      
       return $user;
     }
 
@@ -150,6 +148,10 @@
       }
   
       return $places;
+    }
+
+    public function deleteRegistrate ($userID, $tournamentID) {
+      $sql = 'DELETE FROM Registated WHERE user_id=:user_id AND tournament_id=:tournament_id';
     }
 
     public function getTournaments () {

@@ -38,9 +38,12 @@
             if ($tournament['category'] == 3) echo "<td><span>Profesionales</span></td>";
             echo "<td><span>$tournament[users]</span></td>";
             echo "<td class='td-btn'>";
-            if (!$tournament->isIn) {
+            if (!$tournament['isIn']) {
               if (!$band) echo "<span class='disabled btn btn-danger'>OLD DATE</span>";
               if ($band) echo "<span onClick='register(this)' data-t-id=$tournament[id] class='btn btn-warning'>Suscribe In</span>";
+            } else {
+              // if (!$band) echo "<span class='disabled btn btn-danger'>OLD DATE</span>";
+              echo "<span class='btn btn-danger mod-opogly'>ALREADY IN</span>";
             }
             echo "</td>";
             echo "</tr>";

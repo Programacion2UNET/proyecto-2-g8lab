@@ -153,7 +153,11 @@
     }
 
     public function getTournaments () {
-      $sql = 'SELECT * FROM place';
+      //$sql = 'SELECT *, count(users) FROM place';
+      $sql = 
+      'SELECT DISTINCT(p.id), p.name, p.category, p.start, p.end, p.created_at, p.description, p.place, count(r.user_id) as users FROM place p 
+      LEFT JOIN registated r ON r.tournament_id = p.id
+      GROUP BY p.id, p.name, p.category, p.start, p.end, p.created_at, p.description, p.place';
       $query = $this->conn->prepare($sql);
       $query->execute();
       $result = $query->fetchAll();

@@ -102,6 +102,14 @@
       return $r;
     }
 
+    // public function getAllTbyId ($tId) {
+    //   $sql = 'SELECT * FROM Registated R where R.id==:id';
+    //   $query = $this->conn->prepare($sql);
+    //   $r = $query->execute([
+    //     'userid':
+    //   ]);
+    // }
+
     public function registerByUserInT ($userID, $tournamentID) {
       $sql = 'INSERT INTO Registated (user_id, tournament_id) VALUES (:userId, :tournamentID)';
       $query = $this->conn->prepare($sql);

@@ -43,7 +43,7 @@
     </tbody>
   </table>
   <h4 class='more-btn btn btn-success'>
-    Add more
+    <a href="login.php">Add more Users</a>
   </h4>
   <br />
   <br />
@@ -58,14 +58,14 @@
         <th>Created At</th>
         <th>Decription</th>
         <th>place</th>
-        <th>Users In</th>
+        <th>Category</th>
         <th>&nbsp;</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
         <?php 
           foreach ($tournaments as $tournament) {
+            echo "<tr>";
             echo "<td><span>$tournament[id]</span></td>";
             echo "<td><span>$tournament[name]</span></td>";
             echo "<td><span>$tournament[start]</span></td>";
@@ -74,17 +74,17 @@
             echo "<td><span>$tournament[description]</span></td>";
             echo "<td><span>$tournament[place]</span></td>";
             echo "<td><span>$tournament[category]</span></td>";
+            echo "<td class='td-btn'>
+                    <span class='btn btn-warning'>Update</span>
+                    <span class='btn btn-danger'>Delete</span>
+                    </td>
+                 </tr>";
           }
         ?>
-        <td class='td-btn'>
-          <span class='btn btn-warning'>Update</span>
-          <span class='btn btn-danger'>Delete</span>
-        </td>
-      </tr>
     </tbody>
   </table>
   <h4 class='more-btn btn btn-success'>
-    Add more
+    <a href="addT.php">Add more tournaments</a>
   </h4>
   <br />
   <br />
@@ -100,20 +100,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
         <?php 
           foreach ($registers as $register) {
+            echo "<tr>";
             echo "<td><span>$register[id]</span></td>";
             echo "<td><span>$register[user_id]</span></td>";
             echo "<td><span>$register[created_at]</span></td>";
             echo "<td><span>$register[tournament_id]</span></td>";
+            echo" <td class='td-btn'><span class='btn btn-warning'>Update</span><span class='btn btn-danger'>Delete</span></td></tr>";
           }
         ?>
-        <td class='td-btn'>
-          <span class='btn btn-warning'>Update</span>
-          <span class='btn btn-danger'>Delete</span>
-        </td>
-      </tr>
     </tbody>
   </table>
   <h4 class='more-btn btn btn-success'>

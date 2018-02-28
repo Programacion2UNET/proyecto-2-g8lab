@@ -5,7 +5,7 @@
     <nav>
       <ol>
         <li><a href="index.php">Home</a></li>
-        <li><a href="#">Add Tournaments</a></li>
+        <li><a href="addT.php">Add Tournaments</a></li>
         <?= $isAdmin ? '<li><a href="admin.php">Admin Panel</a></li>' : '' ?>
       </ol>
     </nav>

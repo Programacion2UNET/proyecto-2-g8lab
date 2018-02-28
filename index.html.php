@@ -2,8 +2,8 @@
   <nav class='nav'>
     <div class='icon-text'>
       <h2>Tournamet-Maketor</h2>
-      <?= $auth ? "<a href='RegisterTournamets.php'>Tournaments Register</a>": '' ?>
-      <?= $auth ? "<a href='MyTournaments.php'>My Tournaments</a>": '' ?>
+      <?= $auth ? "<a href='#'>Tournaments Register</a>": '' ?>
+      <?= $auth ? "<a href='#'>My Tournaments</a>": '' ?>
     </div>
     <ul>
       <li>

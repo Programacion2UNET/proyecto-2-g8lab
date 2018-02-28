@@ -113,6 +113,45 @@
     $session->logout();
     header('location:index.php');
     break;
+  case 'GET addT.php': {
+    if ($session->isAuth()) {
+      View::render('./Views/addT.html.php');
+    }
+    else {
+      header('location:login.php');
+    }
+    break;
+  }
+  case 'POST addT.php': {
+    if ($session->isAuth()) {
+      $name = $_POST['name'];
+      $des = $_POST['description'];
+      $category = $_POST['category'];
+      $start = $_POST['start'];
+      $end = $_POST['end'];
+      $place = $_POST['place'];
+      if (!$name || !$des || !$category || !$start || !$end || !$place) {
+        View::render('./Views/ERRORO.html.php', ['message' => 'empty fields', 'code' => 500]);
+        var_dump($_POST);
+      }
+      $R = $db->addTournament([
+        'name' => $name,
+        'des' => $des,
+        'category' => $category,
+        'start' => $start,
+        'end' => $end,
+        'place' => $place
+      ]);
+      if ($R) {
+        View::render('./Views/ERRORO.html.php', ['message' => 'SAVED', 'code' => 200]);
+      }
+    }
+    else {
+      header('location:login.php');
+    }
+    break;
+  }
+  case 'ERR.php':
   default:
     $vars = ['message' => 'Not Found', 'code' => 404];
     View::render('./Views/ERRORO.html.php', $vars);

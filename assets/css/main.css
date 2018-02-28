@@ -6,6 +6,12 @@ body {
   text-align: center;
 }
 
+h4 a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
 .login {
   position: absolute;
   background-color: white;

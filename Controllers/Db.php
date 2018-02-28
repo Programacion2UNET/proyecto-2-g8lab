@@ -86,6 +86,33 @@
       return $registers;
     }
 
+    public function addTournament ($data) {
+      $sql = 'INSERT INTO place (name, category, start, end, description, place) 
+                VALUES (:name, :category, :start, :end, :des, :place)';
+      $query = $this->conn->prepare($sql);
+      $r = $query->execute([
+        'name' => $data['name'],
+        'des' => $data['des'],
+        'category' => $data['category'],
+        'start' => $data['start'],
+        'end' => $data['end'],
+        'place' => $data['place']
+      ]);
+
+      return $r;
+    }
+
+    public function registerByUserInT ($userID, $tournamentID) {
+      $sql = 'INSERT INTO Registated (user_id, tournament_id) VALUES (:userId, :tournamentID)';
+      $query = $this->conn->prepare($sql);
+      $r = $query->execute([
+        'userId' => $userID,
+        'tournamentID' => $tournamentID
+      ]);
+
+      return $r;
+    }
+
     public function getTournamentsByUserId ($userId) {
       $sql = 'SELECT P.name \'tournament_name\', U.user_name "user_name" FROM Registated R JOIN place P JOIN users U ON (R.tournament_id=P.id AND R.user_id=U.id AND U.id=:userId)';
       $query = $this->conn->prepare($sql);

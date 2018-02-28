@@ -36,7 +36,7 @@
             if ($tournament['category'] == 1) echo "<td><span>Principiantes</span></td>";
             if ($tournament['category'] == 2) echo "<td><span>Aficionados</span></td>";
             if ($tournament['category'] == 3) echo "<td><span>Profesionales</span></td>";
-            echo "<td><span>??</span></td>";
+            echo "<td><span>$tournament[users]</span></td>";
             echo "<td class='td-btn'>";
             if (!$tournament['isIn']) {
               if (!$band) echo "<span class='disabled btn btn-danger'>OLD DATE</span>";

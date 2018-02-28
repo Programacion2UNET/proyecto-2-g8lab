@@ -102,6 +102,19 @@
       return $r;
     }
 
+    public function getIfIn ($tournamentID, $userID) {
+      $sql = 'SELECT * FROM Registated WHERE user_id=:userId and tournament_id=:tournamentID';
+      $query = $this->conn->prepare($sql);
+      $R = $query->execute([
+        'tournamentID' => $tournamentID,
+        'userID' => $userID
+      ]);
+
+      $user = $query->fetch(PDO::FETCH_ASSOC);
+      
+      return $user;
+    }
+
     // public function getAllTbyId ($tId) {
     //   $sql = 'SELECT * FROM Registated R where R.id==:id';
     //   $query = $this->conn->prepare($sql);
